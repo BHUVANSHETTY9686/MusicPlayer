@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mDrawerLayout.closeDrawers();
                 switch (item.getItemId()) {
                     case R.id.nav_about:
-                        about();
+
                         break;
                 }
                 return true;
@@ -129,9 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    /**
-     * Function to ask user to grant the permission.
-     */
+
 
     private void grantedPermission() {
         if (ContextCompat.checkSelfPermission(MainActivity.this,
@@ -154,13 +152,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    /**
-     * Checking if the permission is granted or not
-     *
-     * @param requestCode
-     * @param permissions
-     * @param grantResults
-     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -225,22 +216,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    /**
-     * Function to show the dialog for about us.
-     */
-    private void about() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getString(R.string.about))
-                .setMessage(getString(R.string.about_text))
-                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -301,12 +276,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
-    /**
-     * Function to handle the click events.
-     *
-     * @param v
-     */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
